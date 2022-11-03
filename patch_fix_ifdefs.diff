@@ -1,26 +1,25 @@
-From 6854310a3d0332c2c697882891b8d0ed89688184 Mon Sep 17 00:00:00 2001
-From: Christian Treffs <ctreffs@gmail.com>
-Date: Thu, 8 Jul 2021 19:48:59 +0200
-Subject: [PATCH] Fix ifdefs
-
----
- Sources/CImGui/include/cimgui.h | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
 diff --git a/Sources/CImGui/include/cimgui.h b/Sources/CImGui/include/cimgui.h
-index 47ec48b..38136d5 100644
+index 08e57db..02e373d 100644
 --- a/Sources/CImGui/include/cimgui.h
 +++ b/Sources/CImGui/include/cimgui.h
-@@ -38,7 +38,7 @@ typedef unsigned __int64 ImU64;
+@@ -35,11 +35,14 @@
+ #ifdef _MSC_VER
+ typedef unsigned __int64 ImU64;
+ #else
+-//typedef unsigned long long ImU64;
++typedef unsigned long long ImU64;
  #endif
  
  
 -#ifdef CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 +#ifndef CIMGUI_DEFINE_ENUMS_AND_STRUCTS
- typedef struct ImGuiTableColumnSettings ImGuiTableColumnSettings;
- typedef struct ImGuiTableCellData ImGuiTableCellData;
- typedef struct ImGuiStackTool ImGuiStackTool;
-@@ -2240,7 +2240,7 @@ struct SDL_Window;
++ typedef struct ImGuiTableColumnSettings ImGuiTableColumnSettings;
++ typedef struct ImGuiTableCellData ImGuiTableCellData;
++ typedef struct ImGuiStackTool ImGuiStackTool;
+ 
+ typedef struct ImDrawChannel ImDrawChannel;
+ typedef struct ImDrawCmd ImDrawCmd;
+@@ -2884,7 +2887,7 @@ struct SDL_Window;
  typedef union SDL_Event SDL_Event;
  #endif // CIMGUI_DEFINE_ENUMS_AND_STRUCTS
  
@@ -29,6 +28,19 @@ index 47ec48b..38136d5 100644
  typedef struct ImGuiStorage::ImGuiStoragePair ImGuiStoragePair;
  typedef struct ImGuiTextFilter::ImGuiTextRange ImGuiTextRange;
  typedef ImStb::STB_TexteditState STB_TexteditState;
--- 
-2.31.0
 
+diff --git a/Sources/ImGui/ImGui+Definitions.swift b/Sources/ImGui/ImGui+Definitions.swift
+index 1514df1..ec5b8fb 100644
+--- a/Sources/ImGui/ImGui+Definitions.swift
++++ b/Sources/ImGui/ImGui+Definitions.swift
+@@ -5087,7 +5087,7 @@ public typealias ImSpanAllocator = OpaquePointer
+ 	return igImUpperPowerOfTwo(v)
+ }
+ 
+-@inlinable public func ImVectorreservediscard(_ this: UnsafeMutablePointer<ImVector>!, _ new_capacity: Int32) -> Void {
+-	return ImVector_reserve_discard(this,new_capacity)
+-}
++// @inlinable public func ImVectorreservediscard(_ this: UnsafeMutablePointer<ImVector>!, _ new_capacity: Int32) -> Void {
++// 	return ImVector_reserve_discard(this,new_capacity)
++// }
+ 

@@ -1,0 +1,58 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug DemoMinimal",
+            "program": "${workspaceFolder:SwiftImGui}/.build/debug/DemoMinimal",
+            "args": [],
+            "cwd": "${workspaceFolder:SwiftImGui}",
+            "preLaunchTask": "swift: Build Debug DemoMinimal"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Release DemoMinimal",
+            "program": "${workspaceFolder:SwiftImGui}/.build/release/DemoMinimal",
+            "args": [],
+            "cwd": "${workspaceFolder:SwiftImGui}",
+            "preLaunchTask": "swift: Build Release DemoMinimal"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug DemoMetal-macOS",
+            "program": "${workspaceFolder:SwiftImGui}/.build/debug/DemoMetal-macOS",
+            "args": [],
+            "cwd": "${workspaceFolder:SwiftImGui}",
+            "preLaunchTask": "swift: Build Debug DemoMetal-macOS"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Release DemoMetal-macOS",
+            "program": "${workspaceFolder:SwiftImGui}/.build/release/DemoMetal-macOS",
+            "args": [],
+            "cwd": "${workspaceFolder:SwiftImGui}",
+            "preLaunchTask": "swift: Build Release DemoMetal-macOS"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug AutoWrapper",
+            "program": "${workspaceFolder:SwiftImGui}/.build/debug/AutoWrapper",
+            "args": [],
+            "cwd": "${workspaceFolder:SwiftImGui}",
+            "preLaunchTask": "swift: Build Debug AutoWrapper"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Release AutoWrapper",
+            "program": "${workspaceFolder:SwiftImGui}/.build/release/AutoWrapper",
+            "args": [],
+            "cwd": "${workspaceFolder:SwiftImGui}",
+            "preLaunchTask": "swift: Build Release AutoWrapper"
+        }
+    ]
+}

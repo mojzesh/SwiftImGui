@@ -43,7 +43,7 @@ wrapLibImGui: buildAutoWrapper
 
 .PHONY: applyFixIfDefsPatch
 applyFixIfDefsPatch: 
-	git apply patch_fix_ifdefs.diff
+	git apply patch_fix_ifdefs.diff --allow-empty
 	
 .PHONY: resetSubmodule
 resetSubmodule:
